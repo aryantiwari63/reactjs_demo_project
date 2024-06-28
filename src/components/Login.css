@@ -1,0 +1,46 @@
+.form{
+    background-color: rgb(255,255,255);
+    width: 60%;
+    margin-top: 8%;
+    margin-left: 20%;
+}
+
+
+.entryproperty{
+    width: 40%;
+    margin-left: 32%;
+    margin-top: 20px;
+ }
+.entryproperty label {
+    display: block;
+    margin-bottom: 10px;/* Adds space between each label-input pair */
+    text-align: left;
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+}
+.hr{
+   
+        height: 4px; 
+        background-color: #000; 
+        border: none; 
+        margin: 10px 0; 
+        width: 100%; 
+
+}
+.input-field {
+    width: 100%; /* Sets the width of the input fields */
+    max-width: 300px; /* Maximum width for the input fields, adjust as needed */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    padding: 5px; /* Adds some padding inside the input fields */
+}
+.button{
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    width: 130px;
+    border-radius: 8px;
+    margin-left: 50px;
+    font-size: 18px;
+}

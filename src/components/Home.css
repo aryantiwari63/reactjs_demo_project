@@ -1,0 +1,44 @@
+.homemain{
+    background-color: rgb(255,255,255);
+}
+.heading{
+    margin-top: 4px;
+    
+}
+.text-xl{
+     font-size: 40px;
+    text-align: left;
+    font-weight: bold;
+}
+.text-xl span{
+    color: rgb(60,115,229);
+}
+.headingtext{
+    text-align: left;
+    font-size: 16px;
+}
+
+.searchpart {
+    display: flex;
+    align-items: center;
+    margin-right: 0; /* Ensure no margin between .searchpart divs */
+    width: 400px;
+    border: 1px solid rgb(212,212,212);
+}
+.searchpart:last-child {
+    margin-right: 10px; /* Optional: Add some margin before the button if needed */
+}
+.searchpart span {
+    margin-right: 5px; /* Space between icon and input */
+}
+.searchpart input {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    padding: 5px; /* Optional: Add some padding inside the input */
+    
+}
+button{
+    height: 42px;
+    width: 100px;
+}
