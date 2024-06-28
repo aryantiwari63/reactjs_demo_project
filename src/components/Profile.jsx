@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setProfileData } from '../actions/profileaction';
+import { fetchProfileData, setProfileData } from '../actions/profileActions';
 //import { useProfileContext } from '../Context';              context api
 function Profile() {
     
@@ -13,57 +14,58 @@ function Profile() {
      const dispatch = useDispatch();
      const history = useNavigate();
      useEffect(() => {
-           fetchprofildata();
+         
+           dispatch(fetchProfileData());
            }, []);
      
-        const fetchprofildata = async () => {
-            try {
-              // Retrieve token from localStorage
-              const token = localStorage.getItem('token');
-        
-              // Check if token exists
-              if (!token) {
-                throw new Error('No token found');
+              
+       /* const fetchProfildata = async () => {
+          try {
+            // Retrieve token from localStorage
+            const token = localStorage.getItem('token');
+      
+            // Check if token exists
+            if (!token) {
+              throw new Error('No token found');
+            }
+      
+            // Make the request with the Authorization header
+            const response = await axios.get('http://localhost:8000/api/profile', {
+              headers: {
+                'Authorization': `Bearer ${token}`
               }
-        
-              // Make the request with the Authorization header
-              const response = await axios.get('http://localhost:8000/api/profile', {
-                headers: {
-                  'Authorization': `Bearer ${token}`
-                }
-              });
-              setUserProfile(response.data);
-              dispatch(setProfileData(response.data)); 
-              console.log('this is profile data',response.data);
-              
-            } catch (error) {
-              console.log(error);
-            }
-          };
+            });
+            setUserProfile(response.data);
+            dispatch(setProfileData(response.data)); 
+            console.log('this is profile data',response.data);
+            
+          } catch (error) {
+            console.log(error);
+          }
+        };*/
 
-          const handleLogout = async () => {
-            try {
-              const token = localStorage.getItem('token');
-              await fetch('/logout', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${token}`
-                }
-              });
-        
-              // Remove token from local storage
-              localStorage.removeItem('token');
-              
-              // Redirect to login page
-             // history.push('/login');
-              history('/login');
-            } catch (error) {
-              console.error('Error during logout:', error);
-            }
-          };
-        
-
+        const handleLogout = async () => {
+          try {
+            const token = localStorage.getItem('token');
+            await fetch('/logout', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+              }
+            });
+      
+            // Remove token from local storage
+            localStorage.removeItem('token');
+            
+            // Redirect to login page
+           // history.push('/login');
+            history('/login');
+          } catch (error) {
+            console.error('Error during logout:', error);
+          }
+        };
+      
     return (
         <div>
         <div className="profile-img">
